@@ -18,8 +18,9 @@ function toggleFields(link) {
 	var container = link.parents('.field-collapse_fields');
 	var text = link.text();
 	var aNextFields = container.nextAll('.field');
+	var hasErrors = container.nextAll('.field').children('.invalid').length > 0;
 
-	if (link.hasClass('hide') && aNextFields.length > 0) {
+	if (link.hasClass('hide') && aNextFields.length > 0 && !hasErrors) {
 		for (i=0; i<numFields && i<aNextFields.length; i++) {
 			jQuery(aNextFields[i]).hide();		
 			if (i== numFields-1 || i==aNextFields.length-1)
