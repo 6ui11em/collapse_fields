@@ -92,8 +92,9 @@
 			$element_name = $this->get('element_name');
 			$allow_override = null;
 			
-			$label = Widget::Label('');
-			$span = new XMLElement('span');
+			$label = Widget::Label('',null,'subsection');
+
+			$h4 = new XMLElement('h4');
 			
 			$anchor = Widget::Anchor(
 				($this->get('collapse') == 'yes' ? '(+) ' : '(-) ').$this->get('label'),
@@ -102,9 +103,9 @@
 				'collapse_field '.($this->get('collapse') == 'yes' ? 'hide' : '')
 			);
 						
-			$span->appendChild($anchor);
+			$h4->appendChild($anchor);
 			
-			$label->appendChild($span);
+			$label->appendChild($h4);
 			$wrapper->appendChild($label);
 		}		
 		

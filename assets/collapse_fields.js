@@ -27,8 +27,12 @@ function toggleFields(link) {
 
 		link.text(text.replace('(-)','(+)'));
 	} else {
-		for (i=0; i<numFields && i<aNextFields.length; i++)
+		for (i=0; i<numFields && i<aNextFields.length; i++) {
 			jQuery(aNextFields[i]).show();
+			if (i== numFields-1 || i==aNextFields.length-1)
+				jQuery(aNextFields[i]).addClass('collapse_fields_last');
+		}
+		
 		link.addClass('hide');
 		container.addClass('selected');
 

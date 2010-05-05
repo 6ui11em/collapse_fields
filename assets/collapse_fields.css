@@ -1,7 +1,12 @@
-div.field-collapse_fields label span {
+div.field-collapse_fields label {
 	text-align: left;
 }
 
-div.selected label span {
-	background-color: transparent;
+div.field-collapse_fields label h4 {
+	margin: 0;
+}
+
+.collapse_fields_last {
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
 }
