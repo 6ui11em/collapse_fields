@@ -4,6 +4,8 @@ div.field-collapse_fields label {
 
 div.field-collapse_fields label h4 {
 	margin: 0;
+	cursor: hand;
+	cursor: pointer;
 }
 
 .collapse_fields_last {

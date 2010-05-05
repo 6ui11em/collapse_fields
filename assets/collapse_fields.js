@@ -20,8 +20,11 @@ function toggleFields(link) {
 	var aNextFields = container.nextAll('.field');
 
 	if (link.hasClass('hide') && aNextFields.length > 0) {
-		for (i=0; i<numFields && i<aNextFields.length; i++)
-			jQuery(aNextFields[i]).hide();
+		for (i=0; i<numFields && i<aNextFields.length; i++) {
+			jQuery(aNextFields[i]).hide();		
+			if (i== numFields-1 || i==aNextFields.length-1)
+				jQuery(aNextFields[i]).addClass('collapse_fields_last');
+		}
 		link.removeClass('hide');
 		container.removeClass('selected');
 
