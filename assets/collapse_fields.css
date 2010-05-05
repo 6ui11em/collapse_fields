@@ -1,0 +1,7 @@
+div.field-collapse_fields label span {
+	text-align: left;
+}
+
+div.selected label span {
+	background-color: transparent;
+}
