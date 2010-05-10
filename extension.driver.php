@@ -4,7 +4,8 @@
 	/*-------------------------------------------------------------------------
 		Extension definition
 	-------------------------------------------------------------------------*/
-		
+		protected static $fields = array();
+
 		public static $params = null;
 		
 		public function about() {
