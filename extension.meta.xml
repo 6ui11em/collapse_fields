@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension id="collapse_fields">
+<name>Collapse Fields</name>
+<description>A simple way to group fields in a kind of toggle panel.</description>
+<repo type="github">https://github.com/6ui11em/collapse_fields</repo>
+<url type="discuss">http://symphony-cms.com/discuss/thread/44157/</url>
+<types>
+<type>Interface</type>
+</types>
+<authors>
+<author>
+<name github="6ui11em" symphony="guillem_l">Guillem Lorman</name>
+<email>guillem@bajoelcocotero.com</email>
+<website>http://bajoelcocotero.com</website>
+</author>
+</authors>
+<releases>
+<release version="1.0" date="2010-05-05" min="2.0.6" />
+<release version="1.1" date="2010-10-03" min="2.0.6">
+- Update CSS
+</release>
+</releases>
+<media>
+<item type="image" url="http://github.com/downloads/6ui11em/collapse_fields/Imagen_14.png">Collapsed Panel Preview.</item>
+<item type="image" url="http://github.com/downloads/6ui11em/collapse_fields/Imagen_15.png">Expanded Panel Preview.</item>
+</media>
+
+</extension>
