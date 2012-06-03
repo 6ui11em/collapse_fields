@@ -6,7 +6,7 @@
 div.field-collapse_fields label {
 	text-align: left;
 	background-color: transparent;
-	margin-bottom: 10px;
+	margin-bottom: 0;
 }
 
 
@@ -19,31 +19,40 @@ div.field.field-collapse_fields{
     border-radius: 8px;
     text-shadow: none;
     text-decoration: none;
-    background-color: #353530;
+    background-color: #282828;
+    min-height: 0;
+    margin-bottom: 10px
 }
 
 div.field.field-collapse_fields.selected{
     -moz-border-radius: 8px 8px 0px 0px;
     border-radius: 8px 8px 0px 0px;
-    background-color: #9B9B96;
+    background-color: #f4f4f4;
+		border: 1px solid #ccc;
 }
 
-div.field.field-collapse_fields a{
+div.field.field-collapse_fields.selected a {
+	color: #333;
+}
+
+div.field.field-collapse_fields a {
     text-decoration: none;
-    color: #FFF;
+    color: #fff;
 }
 
 div.field.field-collapse_fields h4{
     text-align: left;
     font-size: 1.1em;
     text-shadow: none;
-    margin: 0 0 10px;
+    margin: 0;
     display: block;
     padding: 7px;
     cursor: hand;
     cursor: pointer;
+    /*
     text-shadow: #353530 1px 1px 1px;
     -moz-text-shadow: #353530 1px 1px 1px;
+    */
     background-color: transparent;
     border: 0;
 }

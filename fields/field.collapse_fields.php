@@ -5,20 +5,19 @@
 	class FieldCollapse_Fields extends Field {
 		protected static $ready = true;
 		
-		public function __construct(&$parent) {
-			parent::__construct($parent);
+		public function __construct() {
+			parent::__construct();
 			
 			$this->_name = 'Collapse Fields';
-			$this->_driver = $this->_engine->ExtensionManager->create('collapse_fields');
 			
 			// Set defaults:
-			$this->set('show_column', 'no');
+			// $this->set('show_column', 'no');
 		}
 		
 		public function createTable() {
 			$field_id = $this->get('id');
 			
-			return $this->_engine->Database->query("
+			return Symphony::Database()->query("
 				CREATE TABLE IF NOT EXISTS `tbl_entries_data_{$field_id}` (
 					`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 					`entry_id` INT(11) UNSIGNED NOT NULL,
@@ -54,7 +53,7 @@
 			$label->setValue($input->generate() . ' Hide fields by default');
 			$wrapper->appendChild($label);
 						
-			$this->appendShowColumnCheckbox($wrapper);
+			// $this->appendShowColumnCheckbox($wrapper);
 			
 		}
 		
@@ -72,7 +71,7 @@
 				'collapse'		=> $this->get('collapse')
 			);
 			
-			$this->Database->query("
+			Symphony::Database()->query("
 				DELETE FROM
 					`tbl_fields_{$handle}`
 				WHERE
@@ -80,7 +79,7 @@
 				LIMIT 1
 			");
 			
-			return $this->Database->insert($fields, "tbl_fields_{$handle}");
+			return Symphony::Database()->insert($fields, "tbl_fields_{$handle}");
 		}
 		
 	/*-------------------------------------------------------------------------

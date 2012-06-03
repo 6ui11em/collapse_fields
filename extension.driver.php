@@ -7,27 +7,13 @@
 		protected static $fields = array();
 
 		public static $params = null;
-		
-		public function about() {
-			return array(
-				'name'			=> 'Field: Collapse Fields',
-				'version'		=> '1.0.0',
-				'release-date'	=> '2010-05-05',
-				'author'		=> array(
-					'name'			=> 'Guillem Lorman',
-					'website'		=> 'http://www.bajoelcocotero.com',
-					'email'			=> 'guillem@bajoelcocotero.com'
-				),
-				'description'	=> 'Add a link to collapse the folowing "n" fields in the publish page, making possible to the user to show or hide a group of fields.'
-			);
-		}
-		
+				
 		public function uninstall() {
 			$this->_Parent->Database->query("DROP TABLE `tbl_fields_collapse_fields`");
 		}
 		
 		public function install() {
-			$this->_Parent->Database->query("
+			Symphony::Database()->query("
 				CREATE TABLE IF NOT EXISTS `tbl_fields_collapse_fields` (
 					`id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
 					`field_id` INT(11) UNSIGNED NOT NULL,
@@ -86,7 +72,7 @@
 	-------------------------------------------------------------------------*/
 		
 		public function initaliseAdminPageHead($context) {
-			$page = $context['parent']->Page;
+			$page = Administration::instance()->Page;
 						
 			$page->addScriptToHead(URL . '/extensions/collapse_fields/assets/collapse_fields.js', 9200);
 			$page->addStylesheetToHead(URL . '/extensions/collapse_fields/assets/collapse_fields.css', 'screen', 9200);
